@@ -10,11 +10,12 @@ if [ $# -eq 0 ]
     echo "No student name was provided. Example: ./deploy.sh student_name"
     exit 1
 fi
-
+az logout
+az login
 # Parameters (make changes based on your requirements)
 prefix=$1
-region1=eastus2 	#set region1
-region2=centralus 	#set region2
+region1=eastus 	#set region1
+region2=eastus2 #set region2
 rg=${prefix}-lab #set resource group
 vwanname=${prefix}-panw-lab #set vWAN name
 hub1name=${prefix}-sechub1 #set Hub1 name
