@@ -104,6 +104,8 @@ echo Associate Route table to spoke subnets...
     az network vnet subnet update --vnet-name spoke1 --name subnet1 --resource-group $rg --route-table default-route-table --no-wait
     az network vnet subnet update --vnet-name spoke2 --name subnet2 --resource-group $rg --route-table default-route-table --no-wait
 
+prState=''
+
 echo Checking Cloud NGFW provisioning status...
     while [[ $prState != 'Succeeded' ]];
     do
